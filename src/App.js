@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={handleButtonClick}>не нажимай еблан</button>
-      <button onClick={onClose}>иди нахуй</button>
+      <button onClick={onClose}>иди</button>
       <Routes>
         <Route index element={<Start />}/>
         <Route path={'major'} element={<Major />}/>
