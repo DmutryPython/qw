@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
+}
+
+.videokart {
+  width: 500px; /* Пример: устанавливаем ширину в 300px */
+  height: auto; /* Автоматический расчет высоты для сохранения пропорций */
+  border: 10px solid #000; /* Пример: устанавливаем толщину рамки в 10px */
+  transition: transform 0.5s ease-in-out;
+}
+
+
+.rotating {
+  animation: rotate 2s linear 1; /* Однократное вращение */
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+  
