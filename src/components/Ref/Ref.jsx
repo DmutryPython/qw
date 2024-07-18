@@ -41,15 +41,9 @@ const Ref = () => {
   
   return (
     <div>
-      
-      
-      {loading ? ( 
-        <p>Загрузка данных...</p>
-      ) : (
-        <div>
-          <p>{data} </p>
-        </div>
-      )}
+        <CopyToClipboard text={data}>
+            <button>Copy Snippet</button>
+        </CopyToClipboard>
     </div>
   );
 };
