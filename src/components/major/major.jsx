@@ -1,30 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
+import axios from "axios";
 import './major.css';
-import { useLocation } from 'react-router-dom';
-import videokart from "../../images/videokarta.png";
+
+
+const tg = window.Telegram.WebApp;
+
 
 const Major = () => {
-    const location = useLocation();
-    const { data } = location.state || {};
-    const [isRotating, setIsRotating] = useState(false); // Добавление состояния анимации
 
-    const handleImageClick = () => {
-        setIsRotating(!isRotating); // Переключение состояния анимации
-    };
-
+    const id = tg.initDataUnsafe.user.id
     
+    
+    const handleSubmit = async (userId, number) => {
+        try {
+            const response = await axios.post('https://preferably-engaging-grubworm.ngrok-free.app/data', { userId, number });
+            console.log('Data sent successfully:', response.data);
+        } catch (error) {
+            console.error('There was an error!', error);
+            // Обработка ошибки, если нужно
+        }
+    };
 
     return (
         <div>
-            <img
-                className={`videokart ${isRotating ? 'rotating' : ''}`}
-                src={videokart}
-                alt="Example"
-                onClick={handleImageClick}
-            />
-            
+            <div className="button-container">
+                <button onClick={() => handleSubmit(1, id)}>1</button>
+                <button onClick={() => handleSubmit(2, id)}>2</button>
+                <button onClick={() => handleSubmit(3, id)}>3</button>
+                <button onClick={() => handleSubmit(4, id)}>4</button>
+            </div>
         </div>
     );
 };
 
 export default Major;
+
