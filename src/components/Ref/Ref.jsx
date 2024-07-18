@@ -4,6 +4,10 @@ import axios from "axios"; // Импортируем Axios
 import './Ref.css';
 
 const Ref = () => {
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    
     const fetchData = async () => {
         try {
           setLoading(true); // Устанавливаем состояние загрузки в true перед запросом
