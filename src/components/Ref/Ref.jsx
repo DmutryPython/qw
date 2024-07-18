@@ -28,11 +28,11 @@ const Ref = () => {
   
   return (
     <div>
-        {data[1]}
-        <CopyToClipboard text={data[1]}>
+        {data}
+        <CopyToClipboard text={data}>
             <button>Copy link</button>
         </CopyToClipboard>
-        <p>ваши рефералы: {data[2]}</p>
+        <p>ваши рефералы: {data}</p>
     </div>
   );
 };
