@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Импортируем Axios
 import './Ref.css';
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 
 const tg = window.Telegram.WebApp;
