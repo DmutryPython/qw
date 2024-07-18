@@ -3,51 +3,55 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios"; // Импортируем Axios
 import './Ref.css';
 
-const Ref = () => {
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
 
-    
+const tg = window.Telegram.WebApp;
+
+
+const Ref = () => {
+    const navigate = useNavigate();
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true); 
+
     const fetchData = async () => {
-        try {
-          setLoading(true); // Устанавливаем состояние загрузки в true перед запросом
-    
-          const response = await axios.post('https://preferably-engaging-grubworm.ngrok-free.app/ref', tg, {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          });
-    
-          setData(response.data); 
-        } catch (error) {
-          console.error('Ошибка:', error);
-        } finally {
-          setLoading(false); 
-        }
-      };
-    
+      try {
+        setLoading(true); // Устанавливаем состояние загрузки в true перед запросом 
+        const response = await axios.post('https://preferably-engaging-grubworm.ngrok-free.app/ref', tg, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }); 
+        setData(response.data[1]); 
+      } catch (error) {
+        console.error('Ошибка:', error);
+      } finally {
+        setLoading(false); 
+      }
+    };  
 
     useEffect(() => {
-        fetchData(); 
-    
-    
-        const interval = setInterval(() => {
-          fetchData();
-        }, 10000); 
-    
-        return () => {
-          clearInterval(interval);
-        };
-      }, []);
+      fetchData();  
+      const interval = setInterval(() => {
+        fetchData();
+      }, 10000);    
+      return () => {
+        clearInterval(interval);
+      };
+    }, []);
 
-
-
-    return (
+  
+  return (
+    <div>
+      
+      
+      {loading ? ( 
+        <p>Загрузка данных...</p>
+      ) : (
         <div>
-            ref
-            {data}            
+          <p>{data} </p>
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default Ref;
