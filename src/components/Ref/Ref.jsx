@@ -28,12 +28,17 @@ const Ref = () => {
   
   return (
     <div>
-        {data[1]}
-        <CopyToClipboard text={data[1]}>
+      {data && (
+        <>
+          <p>{data[1]}</p>
+          <CopyToClipboard text={data[1]}>
             <button>Copy link</button>
-        </CopyToClipboard>
-        <p>ваши рефералы: {data[2]}</p>
+          </CopyToClipboard>
+          <p>ваши рефералы: {data[2]}</p>
+        </>
+      )}
     </div>
+      
   );
 };
 
