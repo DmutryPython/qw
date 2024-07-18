@@ -22,8 +22,7 @@ const Major = () => {
                 alt="Example"
                 onClick={handleImageClick}
             />
-            <p>Текущее количество валюты: {currency !== null ? currency : 'Загрузка...'}</p>
-            {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <p>No data received</p>} раз тебя ебали в жопу
+            
         </div>
     );
 };

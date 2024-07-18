@@ -20,7 +20,7 @@ const Start = () => {
     try {
       setLoading(true); // Устанавливаем состояние загрузки в true перед запросом
 
-      const response = await axios.post('https://usable-obliging-parrot.ngrok-free.app/buy', tg, {
+      const response = await axios.post('https://preferably-engaging-grubworm.ngrok-free.app/buy', tg, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -47,10 +47,6 @@ const Start = () => {
       clearInterval(interval);
     };
   }, []);
-
-  const handleClick = () => {
-    navigate('/major', { state: { data } });
-  };
 
   
   return (
