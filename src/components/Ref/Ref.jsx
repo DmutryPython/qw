@@ -31,7 +31,7 @@ const Ref = () => {
       fetchData();  
       const interval = setInterval(() => {
         fetchData();
-      }, 10000);    
+      }, 1000000);    
       return () => {
         clearInterval(interval);
       };
@@ -40,17 +40,10 @@ const Ref = () => {
   
   return (
     <div>
-      
-      
-      {loading ? ( 
-        <p>Загрузка данных...</p>
-      ) : (
-        <div>
-            <CopyToClipboard text={data}>
-                <button>Copy Snippet</button>
-            </CopyToClipboard>
-        </div>
-      )}
+        {data}
+        <CopyToClipboard text={data}>
+            <button>Copy link</button>
+        </CopyToClipboard>
     </div>
   );
 };
