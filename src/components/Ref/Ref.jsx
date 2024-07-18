@@ -15,7 +15,7 @@ const Ref = () => {
             'Content-Type': 'application/json',
           },
         }); 
-        setData(response.data); 
+        setData(response.data[1]); 
       } catch (error) {
         console.error('Ошибка:', error);
       } 
@@ -28,11 +28,11 @@ const Ref = () => {
   
   return (
     <div>
-        {data[1]}
-        <CopyToClipboard text={data[1]}>
+        {data}
+        <CopyToClipboard text={data}>
             <button>Copy link</button>
         </CopyToClipboard>
-        ваши рефералы: {data[2]}
+        <p>ваши рефералы: {data}</p>
     </div>
   );
 };
