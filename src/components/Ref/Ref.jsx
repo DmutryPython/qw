@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './Ref.css';
 
 const Ref = () => {
@@ -34,10 +34,11 @@ const Ref = () => {
         };
       }, []);
 
-      
+
 
     return (
         <div>
+            ref
             {data}            
         </div>
     );
