@@ -4,9 +4,7 @@ import axios from "axios"; // Импортируем Axios
 import './Ref.css';
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-
 const tg = window.Telegram.WebApp;
-
 
 const Ref = () => {
     const navigate = useNavigate();
@@ -42,9 +40,17 @@ const Ref = () => {
   
   return (
     <div>
-        <CopyToClipboard text={data}>
-            <button>Copy Snippet</button>
-        </CopyToClipboard>
+      
+      
+      {loading ? ( 
+        <p>Загрузка данных...</p>
+      ) : (
+        <div>
+            <CopyToClipboard text={data}>
+                <button>Copy Snippet</button>
+            </CopyToClipboard>
+        </div>
+      )}
     </div>
   );
 };
