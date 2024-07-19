@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
+import { TonConnectButton } from '@tonconnect/ui-react';
 import './major.css';
+
 
 
 const tg = window.Telegram.WebApp;
@@ -13,7 +15,7 @@ const Major = () => {
     
     const handleSubmit = async (userId, number) => {
         try {
-            const response = await axios.post('https://preferably-engaging-grubworm.ngrok-free.app/data', { userId, number });
+            const response = await axios.post('https://preferably-engaging-grubworm.ngrok-free.app/data', { number, userId});
             console.log('Data sent successfully:', response.data);
         } catch (error) {
             console.error('There was an error!', error);
@@ -23,6 +25,7 @@ const Major = () => {
 
     return (
         <div>
+            <TonConnectButton />
             <div className="button-container">
                 <button onClick={() => handleSubmit(1, id)}>1</button>
                 <button onClick={() => handleSubmit(2, id)}>2</button>
