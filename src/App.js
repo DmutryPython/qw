@@ -13,7 +13,7 @@ function App() {
   
   
   return (
-    <TonConnectUIProvider manifestUrl="https://kripto123.netlify.app/public/tonconnect-manifest.json">
+    <TonConnectUIProvider manifestUrl="https://kripto123.netlify.app/tonconnect-manifest.json">
       <div className="App">
         123
         <Header />
