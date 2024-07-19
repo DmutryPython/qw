@@ -13,17 +13,19 @@ function App() {
   
   
   return (
-    <TonConnectUIProvider manifestUrl="https://kripto123.netlify.app/tonconnect-manifest.json">
-      <div className="App">
-        123
-        <Header />
-        <Routes>
-          <Route index element={<Start />}/>
-          <Route path={'major'} element={<Major />}/>
-          <Route path={'ref'} element={<Ref />}/>
-        </Routes>
-      </div>
-    </TonConnectUIProvider>
+    <div id="ton-connect">
+      <TonConnectUIProvider manifestUrl="https://kripto123.netlify.app/tonconnect-manifest.json">
+        <div className="App">
+          123
+          <Header />
+          <Routes>
+            <Route index element={<Start />}/>
+            <Route path={'major'} element={<Major />}/>
+            <Route path={'ref'} element={<Ref />}/>
+          </Routes>
+        </div>
+      </TonConnectUIProvider>
+    </div>
   );
 }
 
