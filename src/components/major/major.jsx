@@ -11,7 +11,7 @@ const tg = window.Telegram.WebApp;
 const transaction = {
     messages: [
         {
-            address: "UQB_MjR1POKyzECuEipPycINV_IV2AArqC6JBjBUDclDl6av", // destination address
+            address: "UQAAbq-giIlmuy2F_-lQ6jlePOdaLlwyIgY1TdX5Q7x4T0rC", // destination address
             amount: "10000000" //Toncoin in nanotons
         }
     ]
