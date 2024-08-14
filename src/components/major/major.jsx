@@ -39,7 +39,7 @@ const Major = () => {
         <div>
             <TonConnectButton />
             <button onClick={() => tonConnectUI.sendTransaction(transaction)}>
-                Send transaction
+                жать сюда
             </button>
             <div className="button-container">
 
